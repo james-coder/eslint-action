@@ -1,4 +1,8 @@
-FROM node:10.14.1-alpine
+FROM node:latest
+
+RUN apt-get update \
+    apt-get upgrade \
+    apt-get install git
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
