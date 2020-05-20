@@ -19,11 +19,13 @@ else
     fi
 fi
 
-if [ -z "$1" ]; then
-    glob="."
-else 
-    glob="$@"
-fi
+#if [ -z "$1" ]; then
+#    glob="."
+#else 
+#    glob="$@"
+#fi
 
-echo "## Running ESLint"
-sh -c "$setup ./node_modules/.bin/eslint $glob"
+#echo "## Running ESLint"
+#sh -c "$setup ./node_modules/.bin/eslint $glob"
+echo "## Running pre-commit and pre-push git hooks"
+sh -c "$setup ./.git/hooks/pre-commit && ./.git/hooks/pre-push"
